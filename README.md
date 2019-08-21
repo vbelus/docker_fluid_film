@@ -61,14 +61,14 @@ root@4d11781e476d:/# apt-get install python3-pip python3-tk libopenmpi-dev wget 
 done.
 ```
 
-I now need to clone the repo in which the drl model is
+I now need to clone the repo in which the drl model is\
 $apt-get install git
 ```
 root@4d11781e476d:/# apt-get install git
 ...
 ```
 
-$cd
+$cd\
 $git clone https://github.com/vbelus/drl_film_fluid
 ```
 root@4d11781e476d:/# cd
@@ -89,8 +89,8 @@ root@4d11781e476d:~# ls
 drl_film_fluid
 ```
 
-We install all the python dependencies of the project which are in setup.py
-$cd ~/drl_film_fluid/drl_fluid_film_python3/gym-film
+We install all the python dependencies of the project which are in setup.py\
+$cd ~/drl_film_fluid/drl_fluid_film_python3/gym-film\
 $pip3 install -e ./
 ```
 root@4d11781e476d:~/drl_film_fluid/drl_fluid_film_python3/gym-film# pip3 install -e ./
@@ -99,8 +99,8 @@ Obtaining file:///root/drl_film_fluid/drl_fluid_film_python3/gym-film
 Successfully installed PySimpleGUI-4.2.0 absl-py-0.7.1 astor-0.8.0 cloudpickle-1.2.1 cycler-0.10.0 future-0.17.1 gast-0.2.2 google-pasta-0.1.7 grpcio-1.23.0 gym-0.14.0 gym-film h5py-2.9.0 joblib-0.13.2 keras-applications-1.0.8 keras-preprocessing-1.1.0 kiwisolver-1.1.0 markdown-3.1.1 matplotlib-3.1.1 mpi4py-3.0.2 numpy-1.17.0 opencv-python-4.1.0.25 pandas-0.25.0 protobuf-3.9.1 pyglet-1.3.2 pyparsing-2.4.2 python-dateutil-2.8.0 pytz-2019.2 scipy-1.3.1 stable-baselines-2.7.0 tensorboard-1.14.0 tensorflow-1.14.0 tensorflow-estimator-1.14.0 termcolor-1.1.0 werkzeug-0.15.5 wrapt-1.11.2
 ```
 
-We now get the boost library, we will install it in /usr/local/
-$cd /usr/local
+We now get the boost library, we will install it in /usr/local/\
+$cd /usr/local\
 $wget -4 https://dl.bintray.com/boostorg/release/1.67.0/source/boost_1_67_0.tar.bz2
 ```
 root@4d11781e476d:/usr/local# wget -4 https://dl.bintray.com/boostorg/release/1.67.0/source/boost_1_67_0.tar.bz2
@@ -116,9 +116,9 @@ $tar --bzip2 -xf boost_1_67_0.tar.bz2
 root@4d11781e476d:/usr/local# tar --bzip2 -xf boost_1_67_0.tar.bz2 
 ```
 
-We need to acquire the boost_python library
-$cd boost_1_67_0
-$./bootstrap.sh --with-libraries=python --with-python=python3.6
+We need to acquire the boost_python library\
+$cd boost_1_67_0\
+$./bootstrap.sh --with-libraries=python --with-python=python3.6\
 $./b2
 ```
 root@4d11781e476d:/usr/local/boost_1_67_0# ./bootstrap.sh --with-libraries=python --with-python=python3.6
@@ -141,15 +141,15 @@ The following directory should be added to linker library paths:
     /usr/local/boost_1_67_0/stage/lib
 ```
 
-You need to let the linker know the path to the library libboost_numpy36.so.1.67.0
+You need to let the linker know the path to the library libboost_numpy36.so.1.67.0\
 $export LD_LIBRARY_PATH=/usr/local/boost_1_67_0/bin.v2/libs/python/build/gcc-7.4.0/release/threading-multi:$LD_LIBRARY_PATH
 ```
 root@4d11781e476d:~/drl_film_fluid/drl_fluid_film_python3/gym-film# export LD_LIBRARY_PATH=/usr/local/boost_1_67_0/bin.v2/libs/python/build/gcc-7.4.0/release/threading-multi:$LD_LIBRARY_PATH
 ```
 
-Now we need to make sure the python/cpp bridge in our simulation solver is well built
-$cd ~/drl_film_fluid/drl_fluid_film_python3/gym-film/gym_film/envs/simulation_solver
-$make clean
+Now we need to make sure the python/cpp bridge in our simulation solver is well built\
+$cd ~/drl_film_fluid/drl_fluid_film_python3/gym-film/gym_film/envs/simulation_solver\
+$make clean\
 $make
 ```
 root@4d11781e476d:~/drl_film_fluid/drl_fluid_film_python3/gym-film/gym_film/envs/simulation_solver# make clean
